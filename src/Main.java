@@ -1,22 +1,27 @@
 import java.awt.*;
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Scanner;
 
 public class Main {
-    public static void Menu() {
-        System.out.println("****************JAVA-HACKATHON-05-ADVANCE-1-MENU***************\n" +
-                "1. Nhập tên khách hàng chờ mua vé xem phim\n" +
-                "2. Khách tiếp theo\n" +
-                "3. Thoát");
-    }
 
     public static void main(String[] args) {
-        Menu();
-        Scanner input = new Scanner(System.in);
+        Queue<String> queue = new LinkedList<>();;
         System.out.println("chọn: ");
-        int choice = Integer.parseInt(input.nextLine());
-        while (true){
-            switch (choice){
+        do {
+
+            System.out.println("****************JAVA-HACKATHON-05-ADVANCE-1-MENU***************\n" +
+                    "1. Nhập URL muốn truy cập\n" +
+                    "2. Quay lại\n" +
+                    "3. Thoát");
+            System.out.println("chọn: ");
+            Scanner input = new Scanner(System.in);
+            int choice = input.nextInt();
+            switch (choice) {
                 case 1:
+                    System.out.println("Nhập tên khách hàng: ");
+                    String person = input.nextLine();
+                    queue.add(person);
                     break;
                 case 2:
                     break;
@@ -26,6 +31,6 @@ public class Main {
                 default:
                     System.out.println("chọn lại");
             }
-        }
+        }while (true);
     }
 }
